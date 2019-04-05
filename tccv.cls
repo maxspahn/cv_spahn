@@ -30,7 +30,7 @@
 \LoadClass[10pt]{scrartcl}
 
 \setcounter{secnumdepth}{-1}
-\RequirePackage[hmargin=1.05cm,vmargin=1.05cm,twocolumn,columnsep=1.25cm]{geometry}
+\RequirePackage[hmargin=0.9cm,vmargin=0.9cm,twocolumn,columnsep=1.25cm]{geometry}
 \RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor}
 
 % Capitalize words of at least a minimum length (default to 3 chars).
@@ -67,12 +67,11 @@
 % The command will start a new page and output in onecolumn the
 % subject (first and last name) with the hardcoded text
 % "Curriculum vitae" under it.
-\renewcommand\part[2]{%
+\renewcommand\part[1]{%
     \twocolumn[%
     \begin{center}
 	\vskip-\lastskip%
-	{\usekomafont{part} #1} \medskip\\
-	{\Large #2}
+	{\usekomafont{part} #1}
 	\bigskip
     \end{center}]}
 
@@ -105,12 +104,13 @@
 % \personal[optional: web site without scheme (no http:// prefix)]
 %          {address}{phone number}{email}
 % ]|
-\newcommand\personal[5][]{%
+\newcommand\personal[6][]{%
     \needspace{0.5\textheight}%
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
     \colorbox[HTML]{F5DD9D}{%
     \begin{tabularx}{\boxwidth}{c|X}
+	 \ifstrempty{#6}{}{* & {#6} \smallskip\\}
     \Writinghand & {#2}\smallskip\\
     \Telefon     & {#3}\smallskip\\
     \Letter      & \href{mailto:#4}{#4}
