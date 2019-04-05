@@ -7,7 +7,7 @@ clear:
 
 show:
 	make all;
-	gnome-open cv_spahn.pdf &
+	xdg-open cv_spahn.pdf &
 
 short:
 	make show;
@@ -21,10 +21,6 @@ setg:
 sete:
 	sed -i '1s/ngerman/english/' cv_spahn.tex;
 	make clear
-
-allG:
-	make setg;
-	make show
 
 allE:
 	make sete;

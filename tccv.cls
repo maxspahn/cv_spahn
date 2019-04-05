@@ -27,7 +27,7 @@
               [2012/11/09 v1.0
  Two Column Curriculum Vitae]
 
-\LoadClass[10pt]{scrartcl}
+\LoadClass[9pt]{scrartcl}
 
 \setcounter{secnumdepth}{-1}
 \RequirePackage[hmargin=0.9cm,vmargin=0.9cm,twocolumn,columnsep=1.25cm]{geometry}
